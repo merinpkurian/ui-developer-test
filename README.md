@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Responsive UI with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project showcases a responsive user interface featuring auto-switching tabs and a progress bar that syncs with a timer.
 
-## Available Scripts
 
-In the project directory, you can run:
+The project Template can be used to build bigger projects
 
-### `npm start`
+## Live Application URL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### https://github.com/merinpkurian/ui-developer-test.git
+This URL has the application deployed in
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+### Install Node JS
+Refer to https://nodejs.org/en/ to install nodejs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Install create-react-app
+Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
 
-### `npm run build`
+```bash
+npm install -g create-react-app
+```
+## Live Application URL
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Application is deployed in https://github.com/merinpkurian/ui-developer-test.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Click on the link to see the application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Cloning and Running the Application in local
 
-### `npm run eject`
+Clone the project into local
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install all the npm packages. Go into the project folder and type the following command to install all npm packages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In order to run the application Type the following command
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+The Application Runs on **localhost:3000**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Application design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Components
 
-### Code Splitting
+1. Tab Component : This component displays Auto-Switch Mechanism : Tab components that switch automatically
+every 5 seconds. Also allowing manual tab switching by user interaction, with the auto-switch timer resetting to provide a full 5-second interval before switching again.Highlight the active tab and ensure a smooth transition
+between tabs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Timer Component : This component incorporate a timer running from 14:00 to 14:59.
 
-### Analyzing the Bundle Size
+3.ProgressbarComponent : This component  Sync a progress bar with the timer, filling from 0% to 100% as time advances from 14:00
+to 14:59.It is a child component of timer component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

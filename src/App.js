@@ -1,25 +1,27 @@
 import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TabComponent from './components/TabComponent';
+import TimerComponent from './components/TimerComponent';
+import ProgressBarComponent from './components/ProgressBarComponent';
+import Navbar from './components/NavBar';
+import HeadingSection from './components/HeadingSection';
 
-function App() {
+const App = () => {
+  const [seconds, setSeconds] = useState(0);
+
+  const updateSeconds = (seconds) => {
+    setSeconds(seconds);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar/>
+      <HeadingSection />
+      <TabComponent />
+      <TimerComponent onUpdate={updateSeconds} />
+      {/* <ProgressBarComponent seconds={seconds} /> */}
     </div>
   );
-}
+};
 
 export default App;

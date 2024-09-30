@@ -1,0 +1,93 @@
+/* Timer and Progress Bar Container Styling */
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    margin-right: 1100px; /* Maintain this for general styling */
+    
+}
+
+/* Ensure the timer and progress bar elements are centered */
+.timer {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--Secondary-Violet-700); /* Using variable for consistency */
+}
+
+/* Responsive Design for Progress Bar Container */
+.progress-bar-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--Secondary-Blue-500); /* Using variable for consistency */
+    border-radius: 25px;
+    transition: width 0.5s ease;
+}
+
+/* Reset Button Styling */
+.reset-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: var(--Secondary-Blue-500); /* Using variable for consistency */
+    color: var(--Neutral-White); /* Using variable for consistency */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #2A5EBF; /* Maintain existing hover color */
+}
+
+/* Responsive Design */
+
+/* Mobile: Adjust for screens smaller than 600px */
+@media (max-width: 600px) {
+    .timer-container {
+        margin-right: 0; /* Remove right margin on mobile */
+        margin-top: 500px; /* Add some space above */
+    }
+
+    .progress-bar-container {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Side padding for mobile */
+    }
+
+    .reset-button {
+        width: 100%; /* Full width for reset button on mobile */
+    }
+}
+
+/* Tablet: Adjust for screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .timer-container {
+        margin-right: 0; /* Remove right margin on tablet */
+        margin-top: 500px; /* Add some space above */
+    }
+
+    .progress-bar-container {
+        max-width: 80%; /* Adjust width for tablet */
+    }
+
+    .reset-button {
+        width: auto; /* Reset button to default width */
+    }
+}

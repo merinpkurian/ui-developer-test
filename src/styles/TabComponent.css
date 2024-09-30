@@ -1,0 +1,241 @@
+:root {
+    --Secondary-Blue-200: #A4C7FF;
+    --Secondary-Blue-300: #81B2FF;
+    --Secondary-Blue-500: #3A86FF; /* Active tab color */
+    --Secondary-Violet-700: #361863; /* Inactive tab text color */
+    --Neutral-White: #FFFFFF; /* Background for inactive tabs */
+}
+
+/* Tab Container Styling */
+.tab-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 10px auto; /* Center container */
+    padding-top: 0;
+    height: auto;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1; /* Set to 1 to make it visible */
+}
+
+/* Tab Styling */
+.tabs {
+    display: flex;
+    width: 832px;
+    height: auto;
+    justify-content: center;
+    gap: 24px;
+    margin-left: auto; /* Center tabs */
+    margin-right: auto;
+    opacity: 1;
+}
+
+.tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 48px;
+    padding: 4px 0;
+    gap: 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18.88px;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: var(--Secondary-Blue-500);
+    color: var(--Neutral-White);
+}
+
+.tab:not(.active) {
+    background-color: var(--Neutral-White);
+    color: var(--Secondary-Violet-700);
+}
+
+/* Card container setup */
+.card-container {
+    position: relative; /* Position relative to stack cards */
+    width: 100%;
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center container */
+    padding: 0 20px; /* Side padding */
+    height: auto;
+}
+
+/* Base styles for cards */
+.card {
+    position: absolute; /* Allow overlapping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px; /* Rounded corners */
+    opacity: 1; /* Initially visible */
+    transition: opacity 0.5s ease-in-out;
+    padding: 20px;
+    width: 100%; /* Full width */
+}
+
+/* Ensure active card is visible */
+.card.active {
+    opacity: 1; /* Show active card */
+    z-index: 3; /* Bring active card to front */
+}
+
+/* Card-specific styles for different tabs */
+.card1.active {
+    background: var(--Neutral-White);
+    border: 1px solid var(--Secondary-Blue-200);
+}
+
+.card2 {
+    background: var(--Secondary-Blue-200);
+    top: 40px; /* Positioning for overlay */
+    z-index: 2; /* Second layer */
+}
+
+.card3 {
+    background: var(--Secondary-Blue-300);
+    top: 80px; /* Positioning for overlay */
+    z-index: 1; /* Background layer */
+}
+
+.card2.active {
+    background: var(--Neutral-White);
+    border: 1px solid var(--Secondary-Violet-700);
+    border-radius: 10px;
+}
+
+.card3.active {
+    background: var(--Neutral-White);
+    border: 1px solid var(--Secondary-Blue-500);
+}
+
+/* Card content visibility */
+.card-content {
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: var(--Secondary-Violet-700);
+}
+
+.card-content.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-content.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-box {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.card-box::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: var(--Secondary-Blue-200);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    visibility: hidden;
+}
+
+.card-box:nth-of-type(1)::after,
+.card-box:nth-of-type(2)::after {
+    visibility: visible;
+}
+
+/* Responsive Design */
+
+/* Mobile: Adjust for screens smaller than 600px */
+@media (max-width: 600px) {
+    .tab-container {
+        padding: 0 10px; /* Reduce padding for mobile */
+    }
+
+    .tabs {
+        flex-wrap: wrap; /* Allow tabs to wrap */
+        justify-content: center; /* Center tabs */
+        width: 100%; /* Full width */
+    }
+
+    .tab {
+        width: 100%; /* Full width for tabs */
+        height: 40px;
+        margin: 5px 0; /* Margin between tabs */
+    }
+
+    .card-container {
+        padding: 0 10px; /* Reduce padding for cards */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Maintain space between cards */
+        top: 0; /* Reset top position for mobile */
+    }
+}
+
+/* Tablet: Adjust for screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .tab-container {
+        padding: 10px; /* Padding for tablet */
+    }
+
+    .tabs {
+        width: 100%; /* Full width for tabs */
+    }
+
+    .tab {
+        width: 48%; /* Two tabs in a row */
+    }
+
+    .card-container {
+        padding: 0 20px; /* Padding for cards */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Maintain space between cards */
+        top: 0; /* Reset top position */
+    }
+}
+
+/* Desktop: Adjust for larger screens */
+@media (min-width: 900px) {
+    .tab-container {
+        max-width: 1120px;
+    }
+
+    .tabs {
+        width: 832px;
+    }
+
+    .card-container {
+        max-width: 800px;
+        padding: 0 20px; /* Padding for cards */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Maintain space between cards */
+    }
+}

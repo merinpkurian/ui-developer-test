@@ -1,0 +1,205 @@
+:root {
+    --Secondary-Blue-200: #A4C7FF;
+    --Neutral-White: #FFFFFF;
+    --Gray-Border: #D3D3D3;
+    --Tertiary-Dark-AshViolet-500: #170C34;
+}
+
+/* General styling for Navbar */
+.navbar {
+    width: 100%;
+    height: 69px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--Gray-Border);
+    background: var(--Neutral-White);
+    position: fixed;
+    top: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 72px;
+    height: auto;
+}
+
+.introdo-text {
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+/* Links Container */
+.links-container {
+    display: flex;
+    gap: 20px;
+}
+
+.link-item {
+    color: var(--Tertiary-Dark-AshViolet-500);
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 12.8px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+/* Small Button Styles */
+.small-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.small-button {
+    display: flex;
+    background: var(--Tertiary-Dark-AshViolet-500);
+    color: white;
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 12.8px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .links-container {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .links-container.open {
+        display: flex;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .introdo-text {
+        font-size: 16px;
+    }
+
+    .link-item,
+    .small-button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        padding: 10px 30px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .introdo-text {
+        font-size: 18px;
+    }
+
+    .link-item, .small-button {
+        font-size: 12px;
+    }
+}
+
+/* Text Bar Styling */
+.text-bar {
+    width: 100%;
+    height: 40px;
+    padding: 10px 0;
+    background: linear-gradient(90.32deg, #FEBED9 -39.08%, #C8DDFF 91.1%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.text-content {
+    max-width: 505px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.text-content span {
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 12.8px;
+    font-weight: 600;
+    color: #241042;
+}
+
+.text-content p {
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 12.8px;
+    font-weight: 400;
+    color: #241042;
+    margin: 0;
+}
+
+/* Responsive styling for Text Content */
+@media (max-width: 768px) {
+    .text-bar {
+        height: 44px;
+    }
+
+    .text-content {
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .text-content span,
+    .text-content p {
+        font-size: 10px;
+        line-height: 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-bar {
+        height: 44px;
+    }
+
+    .text-content span, .text-content p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
